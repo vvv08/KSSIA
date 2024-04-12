@@ -1,0 +1,14 @@
+.kssia_viewCompanyWrapper {
+    padding: 30px 0px 100px 0px;
+    .kssia_viewCompanyContainer {
+      h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--kssiaBlue);
+      }
+      .kssia_viewCompanyBackBtn{
+          padding: 0px 0px 0px 20px;
+      }
+    }
+  }

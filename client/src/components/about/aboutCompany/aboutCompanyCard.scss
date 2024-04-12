@@ -1,0 +1,112 @@
+.aboutCompanyCardWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .aboutCompanyCardContainer {
+    width: 80%;
+    @media(max-width:1180px){
+        width: 90%;
+    }
+    .aboutCompanyCardHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: 60px;
+        h1{
+            color: var(--kssiaBlue);
+            @media(max-width:1180px){
+                font-size: 24px;
+            }
+        }
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--kssiaRed);
+        }
+        span:hover{
+            color: var(--kssiaDarkred);
+        }
+    }
+    .aboutCompanyCardContent {
+        display: flex;
+        min-height: 250px;
+        @media(max-width:1180px){
+            flex-direction: column;
+        }
+      .aboutCompanyCardLeft {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .aboutCompanyCardLogo{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                object-fit: contain;
+                max-width: 100%;
+                max-height: 100%;
+              }
+        }
+      }
+      .aboutCompanyCardRight {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        p{
+            @media(max-width:1180px){
+                font-size: 14px;
+            }
+        }
+        h3{
+            color: var(--kssiaParaBold);
+        }
+        h4{
+            color: var(--kssiaParaBold);
+        }
+        .aboutCompanyCardAbout {
+            padding-left: 10px;
+        }
+        .aboutCompanyCardAddress {
+            padding-left: 10px;
+        }
+        .aboutCompanyCardContact {
+            padding-left: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .aboutCompanyCardWebsite {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .aboutCompanyCardWebsiteBtn{
+                height: 35px;
+                width: 100px;
+                background-color: var(--kssiaBlue);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border: 3px solid white;
+                p{
+                    color: white;
+                }
+            }
+            .aboutCompanyCardWebsiteBtn:hover{
+                background-color: var(--kssiaDarkblue);
+            }
+        }
+      }
+    }
+  }
+}

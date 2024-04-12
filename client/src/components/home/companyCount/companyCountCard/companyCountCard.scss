@@ -1,0 +1,38 @@
+.companyCountCardContainer{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .companyCountCardHeader{
+        flex: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--kssiaBlue);
+            @media(max-width:1180px){
+                font-size: 20px;
+            }
+        }
+    }
+    .companyCountCardNumber{
+        flex: 2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--kssiaParaBold);
+            @media(max-width:1180px){
+                font-size: 24px;
+            }
+        }
+    }
+}

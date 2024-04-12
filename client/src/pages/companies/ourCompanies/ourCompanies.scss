@@ -1,0 +1,74 @@
+.ourCompaniesWrapper {
+  margin-top: 20px;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  gap: 20px;
+  .ourCompaniesDistrictList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @media(max-width:1180px){
+      padding: 5px;
+    }
+    select {
+      color: var(--kssiaBlue);
+      height: 24px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    p {
+      color: var(--kssiaDarkblue);
+      font-weight: 500;
+    }
+  }
+  .ourCompaniesHeader {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    h2 {
+      color: var(--kssiaBlue);
+      @media(max-width:1180px){
+        font-size: 20px;
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--kssiaRed);
+      cursor: pointer;
+    }
+    span:hover {
+      color: var(--kssiaDarkred);
+    }
+  }
+  .ourCompaniesContentList{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+  .ourCompaniesContent {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 0px 15px 0px;
+    .ourCompaniesContentError {
+      margin-top: 50px;
+      color: var(--kssiaDarkred);
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

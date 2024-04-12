@@ -1,0 +1,14 @@
+.kssia_homeImageCard{
+    height: calc(100vh - 80px);
+    margin-bottom: 50px;
+    @media(max-width:1180px){
+        height: calc(100vh - 200px);
+    }
+}
+.kssia_companyCount{
+    height: 200px;
+    margin-bottom: 60px;
+    @media(max-width:1180px){
+        height: 150px;
+    }
+}

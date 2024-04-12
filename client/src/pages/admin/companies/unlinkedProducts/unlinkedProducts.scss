@@ -1,0 +1,39 @@
+.kssia_unlinkedProductWrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0px 0px 100px 0px;
+    .kssia_unlinkedProductHeader{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1{
+            color: var(--kssiaBlue);
+        }
+    }
+    .kssia_unlinkedProductBackBtn{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        height: 50px;
+    }
+    .kssia_unlinkedProductTable{
+        width: 80%;
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+    }
+    .kssiaunlinkedError{
+        p{
+            font-size: 20px;
+            color: var(--kssiaError)
+        }
+    }
+}

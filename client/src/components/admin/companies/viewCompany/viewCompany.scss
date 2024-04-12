@@ -1,0 +1,85 @@
+.viewCompanyCardWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .viewCompanyCardContainer {
+      width: 80%;
+      .viewCompanyCardHeader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 60px;
+          h1{
+              color: var(--kssiaBlue);
+          }
+      }
+      .viewCompanyCardContent {
+          display: flex;
+          min-height: 250px;
+        .viewCompanyCardLeft {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .viewCompanyCardLogo{
+              width: 200px;
+              height: 200px;
+              img {
+                  object-fit: contain;
+                  max-width: 100%;
+                  max-height: 100%;
+                }
+          }
+        }
+        .viewCompanyCardRight {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          h3{
+              color: var(--kssiaParaBold);
+          }
+          h4{
+              color: var(--kssiaParaBold);
+          }
+          .viewCompanyCardAbout {
+              padding-left: 10px;
+          }
+          .viewCompanyCardAddress {
+              padding-left: 10px;
+          }
+          .viewCompanyCardContact {
+              padding-left: 10px;
+              display: flex;
+              gap: 10px;
+              align-items: center;
+          }
+          .viewCompanyCardWebsite {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .viewCompanyCardWebsiteBtn{
+                  height: 35px;
+                  width: 100px;
+                  background-color: var(--kssiaBlue);
+                  border-radius: 20px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  border: 3px solid white;
+                  p{
+                      color: white;
+                  }
+              }
+              .viewCompanyCardWebsiteBtn:hover{
+                  background-color: var(--kssiaDarkblue);
+              }
+          }
+        }
+      }
+    }
+  }
+  

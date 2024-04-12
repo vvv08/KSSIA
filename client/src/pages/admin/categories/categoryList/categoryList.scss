@@ -1,0 +1,19 @@
+.adminCategoryListWrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 100px 0px;
+    .adminCategoryListContainer{
+        width: 100%;
+    }
+    .adminCategoryListTable{
+        width: 80%;
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+    }
+}

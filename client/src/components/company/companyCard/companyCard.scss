@@ -1,0 +1,80 @@
+.companyCardWrapper{
+    width: 600px;
+    height: 150px;
+    background-color: var(--kssiaBackground);
+    @media(max-width:1180px){
+        width: 90%;
+        height: 200px;
+    }
+    .companyCardContainer{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 5px;
+         @media(max-width:1180px){
+             flex-direction: column;
+         }
+        .companyCardLeft{
+            flex: 1;
+            @media(max-width:1180px){
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50%;
+                width: 100%;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                @media(max-width:1180px){
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
+        .companyCardRight{
+            flex: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .companyCardRightContent{
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                @media(max-width:1180px){
+                    flex: 2;
+                    gap: 5px;
+                }
+                h2{
+                    color: var(--kssiaBlue);
+                    @media(max-width:1180px){
+                        font-size: 16px;
+                        text-align: center;
+                    }
+                }
+                .companyCardMoreButton{
+                    height: 30px;
+                    width: 100px;
+                    background-color: var(--kssiaBlue);
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    border: 3px solid white;
+                    p{
+                        color: white;
+                        font-size: 14px;
+                    }
+                }
+                .companyCardMoreButton:hover{
+                    background-color: var(--kssiaDarkblue);
+                }
+            }
+        }
+    }
+}

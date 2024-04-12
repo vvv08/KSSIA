@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    --kssiaBackground: #E1EBEE;
+    --kssiaBlue: #004792;
+    --kssiaRed: #fd5c63;
+    --kssiaParaBold: #6699CC;
+    --kssiaDarkred:#AA0000;
+    --kssiaDarkblue:#002D62;
+    --kssiaError:#BA0021;
+    --kssiaButton1:#36A9AE;
+    --kssiaButton1_dark:#2b8588;
+    --kssiaDeleteRed:#BF0426;
+    --kssiaDeleteRed_dark:#800c22;
+    --kssiaViewBlue:#1e90ff;
+    --kssiaViewBlue_dark:#0f559b;
+    --kssiaEditGreen: #40c057;
+    --kssiaEditGreen_dark: #1c802e;
+    --kssiaAddButtonBlue:#318CE7;
+    --kssiaSelectedLink:#fd5c63;
+}
+.kssia_adminViewButton{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: var(--kssiaBackground);
+    background-color: var(--kssiaViewBlue);
+}
+.kssia_adminViewButton:hover{
+    background-color: var(--kssiaViewBlue_dark);
+    transition: 0.4s;
+}
+.kssia_adminEditButton{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: var(--kssiaBackground);
+    background-color: var(--kssiaEditGreen);
+}
+.kssia_adminEditButton:hover{
+    background-color: var(--kssiaEditGreen_dark);
+    transition: 0.4s;
+}
+.kssia_adminDeleteButton{
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: var(--kssiaBackground);
+    background-color: var(--kssiaDeleteRed);
+}
+.kssia_adminDeleteButton:hover{
+    background-color: var(--kssiaDeleteRed_dark);
+    transition: 0.4s;
+}
+
+.kssia_adminViewButton_v2{
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: var(--kssiaBackground);
+    background-color: var(--kssiaViewBlue);
+}
+.kssia_adminViewButton_v2:hover{
+    background-color: var(--kssiaViewBlue_dark);
+    transition: 0.4s;
+}

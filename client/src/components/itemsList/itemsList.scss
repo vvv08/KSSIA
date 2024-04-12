@@ -1,0 +1,17 @@
+.itemsListWrapper{
+    height: 100%;
+    width: 80%;
+    .itemsListContainer{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .itemsListContent{
+            display: flex;
+            flex-wrap: wrap;
+            overflow: auto;
+            gap: 20px;
+            padding: 10px;
+        }
+    }
+}

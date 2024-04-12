@@ -1,0 +1,15 @@
+.kssia_addCategoryWrapper {
+    padding: 30px 0px 100px 0px;
+    .kssia_addCategoryContainer {
+      h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--kssiaBlue);
+      }
+      .kssia_addCategoryBackBtn{
+          padding: 0px 0px 0px 20px;
+      }
+    }
+  }
+  
