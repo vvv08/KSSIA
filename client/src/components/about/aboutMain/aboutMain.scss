@@ -56,8 +56,10 @@
                     width: 80%;
                     line-height: 1.5;
                     @media(max-width:1180px){
-                        width: 90%;
+                        margin-top: 10px;
+                        width: 80%;
                         text-align: justify;
+                        font-size: 14px;
                     }
                 }
             }
