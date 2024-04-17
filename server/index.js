@@ -23,8 +23,14 @@ import authRoutes from './routes/auth.js'
 app.use(express.json());
 
 //To block requests from unknow URLs
+const allowedOrigins = [
+    process.env.SOURCE_URL_1,
+    process.env.SOURCE_URL_2,
+    // Add more origins if needed
+];
+
 app.use(cors({
-    origin:process.env.SOURCE_URL
+    origin:allowedOrigins
 }));
 
 //To log all requests
