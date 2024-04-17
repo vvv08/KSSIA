@@ -43,6 +43,6 @@ app.use('/api/misc/districts',miscRoutes);
 app.use('/api/admin/login',authRoutes);
 
 //Server started in port 3000
-app.listen(3000,() => {
+app.listen(4000,() => {
     console.log("Server started")
 })
