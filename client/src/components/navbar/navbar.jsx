@@ -58,7 +58,7 @@ const Navbar = ({current_tab}) => {
                 <span>
                   <LocalPhoneOutlinedIcon />
                 </span>
-                <p>9496360300</p>
+                <p>9567242099</p>
               </div>
             </div>
           </div>

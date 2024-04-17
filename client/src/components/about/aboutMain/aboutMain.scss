@@ -39,12 +39,12 @@
                 justify-content: center;
                 align-items: center;
                 flex: 2;
-                @media(max-width:1180px){
-                    text-align: center;
-                }
                 p{
                     line-height: 1.5;
                     color: var(--kssiaParaBold);
+                    @media(max-width:1180px){
+                        width: 90%;
+                    }
                 }
             }
             .aboutMainBottomLower{
