@@ -52,13 +52,13 @@ const Navbar = ({current_tab}) => {
                 <span>
                   <MailOutlinedIcon />
                 </span>
-                <p>kssiastate@gmail.com</p>
+                <p>kssiapkd@rediffmail.com</p>
               </div>
               <div className="kssia_navBarContactContent">
                 <span>
                   <LocalPhoneOutlinedIcon />
                 </span>
-                <p>9567242099</p>
+                <p>8078054860</p>
               </div>
             </div>
           </div>

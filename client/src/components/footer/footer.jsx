@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
           <div className="footerRight">
             <Link to= '/aboutUs' style={{ textDecoration: "none",color:"var(--kssiaBlue)" }}><p>About Us</p></Link>
-            <p>kssiastate@gmail.com</p>
+            <p>kssiapkd@rediffmail.com</p>
           </div>
         </div>
       </div>
