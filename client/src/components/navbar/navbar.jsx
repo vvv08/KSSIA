@@ -4,7 +4,7 @@ import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { Link } from "react-router-dom";
 import SearchBar from "./searchBar/searchBar";
-import logo from '../../../public/assets/KSSIA_logo.png'
+import logo from '/assets/KSSIA_logo.png'
 const Navbar = ({current_tab}) => {
   const getColor = (tab) => {
     if(current_tab === tab){
