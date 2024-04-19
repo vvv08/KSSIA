@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const OurCompanies = () => {
   const [companies, setCompanies] = useState([]);
   const [districts, setDistricts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const districtChange = (e) => {
     setSelectedDistrict(e.target.value);
@@ -22,8 +23,13 @@ const OurCompanies = () => {
   }, []);
 
   useEffect(() => {
+    setIsLoading(true)
     getAllCompanies(selectedDistrict).then((result) => {
       setCompanies(result);
+    }).catch((err) => {
+      console.log("Error:", err)
+    }).finally(() => {
+      setIsLoading(false)
     });
   }, [selectedDistrict]);
 
@@ -57,7 +63,7 @@ const OurCompanies = () => {
             })}
           </select>
         </div>
-        {companies[0] ? (
+        {!isLoading ? (companies[0] ? (
           <div className="ourCompaniesContentList">
             <ItemsList
               name={"Our Companies"}
@@ -70,6 +76,12 @@ const OurCompanies = () => {
           <div className="ourCompaniesContent">
             <p className="ourCompaniesContentError">
               Sorry no companies in {selectedDistrict}
+            </p>
+          </div>
+        )) : (
+          <div className="ourCompaniesContent">
+            <p className="ourCompaniesContentLoading">
+              Loading ...
             </p>
           </div>
         )}

@@ -26,4 +26,19 @@
             color: var(--kssiaDarkred);
         }
     }
+    .ourCategoriesContent {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 10px 0px 15px 0px;
+        .ourCategoriesContentLoading {
+          margin-top: 50px;
+          color: var(--kssiaDarkblue);
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
 }
