@@ -43,7 +43,7 @@ const AboutCompanyCard = (props) => {
                   </div>
                 );
               })}
-              <div className="aboutCompanyCardWebsite">
+              {website && <div className="aboutCompanyCardWebsite">
                 <a
                   href={`https://${website}`}
                   target="_blank"
@@ -53,7 +53,7 @@ const AboutCompanyCard = (props) => {
                     <p>Website</p>
                   </div>
                 </a>
-              </div>
+              </div>}
             </div>
           </div>
         </div>
