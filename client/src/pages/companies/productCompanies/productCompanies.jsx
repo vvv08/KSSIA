@@ -12,6 +12,7 @@ const ProductCompanies = () => {
   const { productId, productName } = useParams();
   const [companies, setCompanies] = useState([]);
   const [districts, setDistricts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedDistrict, setSelectedDistrict] = useState("");
 
   const districtChange = (e) => {
@@ -19,18 +20,26 @@ const ProductCompanies = () => {
   };
 
   useEffect(() => {
-    getCompaniesByproduct(productId, selectedDistrict).then((result) => {
-      setCompanies(result);
-    });
+    // getCompaniesByproduct(productId, selectedDistrict).then((result) => {
+    //   setCompanies(result);
+    // });
     getDistricts().then((result) => {
       setDistricts(result);
     });
   }, []);
 
   useEffect(() => {
-    getCompaniesByproduct(productId, selectedDistrict).then((result) => {
-      setCompanies(result);
-    });
+    setIsLoading(true);
+    getCompaniesByproduct(productId, selectedDistrict)
+      .then((result) => {
+        setCompanies(result);
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [selectedDistrict]);
 
   return (
@@ -65,17 +74,23 @@ const ProductCompanies = () => {
             </select>
           </div>
           <div className="productCompaniesContentContainer">
-            {companies[0] ? (
-              <div className="productCompaniesContent">
-                {companies.map((obj, index) => {
-                  return <CompanyCard key={index} data={obj} />;
-                })}
-              </div>
+            {!isLoading ? (
+              companies[0] ? (
+                <div className="productCompaniesContent">
+                  {companies.map((obj, index) => {
+                    return <CompanyCard key={index} data={obj} />;
+                  })}
+                </div>
+              ) : (
+                <div className="productCompaniesContent">
+                  <p className="productCompaniesContentError">
+                    Sorry no companies for {productName} in {selectedDistrict}
+                  </p>
+                </div>
+              )
             ) : (
               <div className="productCompaniesContent">
-                <p className="productCompaniesContentError">
-                  Sorry no companies for {productName} in {selectedDistrict}
-                </p>
+                <p className="productCompaniesContentLoading">Loading ...</p>
               </div>
             )}
           </div>

@@ -10,25 +10,44 @@ import ProductTray from "../../../components/company/productTray/productTray";
 const AboutCompany = () => {
   const { companyId, companyName } = useParams();
   const [aboutCompany, setAboutCompany] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    getAboutCompany(companyId).then((result) => {
-      setAboutCompany(result);
-    });
+    setIsLoading(true);
+    getAboutCompany(companyId)
+      .then((result) => {
+        setAboutCompany(result);
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   return (
     <>
       <Navbar />
-      <div className="aboutCompanyWrapper">
-        <div className="aboutCompanyTop">
-          {aboutCompany[0] && (
-            <AboutCompanyCard name={companyName} data={aboutCompany} />
+      {!isLoading ? (
+        <div className="aboutCompanyWrapper">
+          <div className="aboutCompanyTop">
+            {aboutCompany[0] && (
+              <AboutCompanyCard name={companyName} data={aboutCompany} />
+            )}
+          </div>
+          {aboutCompany[1] && (
+            <div className="aboutCompanyBottom">
+              <ProductTray data={aboutCompany[1]} />
+            </div>
           )}
         </div>
-        {aboutCompany[1] && <div className="aboutCompanyBottom">
-          <ProductTray data = {aboutCompany[1]}/>
-        </div>}
-      </div>
+      ) : (
+        <div className="aboutCompanyWrapper">
+          <div className="aboutCompanyContent">
+            <p className="aboutCompanyContentLoading">Loading ...</p>
+          </div>
+        </div>
+      )}
       <Footer />
     </>
   );

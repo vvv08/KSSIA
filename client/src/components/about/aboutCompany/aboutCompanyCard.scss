@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   .aboutCompanyCardContainer {
-    width: 80%;
+    width: 100%;
     @media(max-width:1180px){
         width: 90%;
     }
@@ -16,7 +16,7 @@
         h1{
             color: var(--kssiaBlue);
             @media(max-width:1180px){
-                font-size: 24px;
+                font-size: 22px;
             }
         }
         span{
