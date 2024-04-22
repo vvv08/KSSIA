@@ -1,5 +1,6 @@
 import React from "react";
 import "./aboutMain.scss";
+import AboutMembers from "../aboutMembers/aboutMembers";
 
 const AboutMain = () => {
   return (
@@ -27,7 +28,7 @@ const AboutMain = () => {
               </p>
             </div>
             <div className="aboutMainBottomLower">
-              <p>
+              {/* <p>
                 The Association is a promotional organization of small scale
                 industrialists. This organization is recognized by the Union and
                 State Governments. The President and other Office Bearers of the
@@ -64,8 +65,11 @@ const AboutMain = () => {
                 most important industrial Belt. We propose to utilize the above
                 building for our office, conference hall, training hall, other
                 activities etc.
-              </p>
+              </p> */}
             </div>
+          </div>
+          <div className="aboutMainMembers">
+            <AboutMembers />
           </div>
         </div>
       </div>

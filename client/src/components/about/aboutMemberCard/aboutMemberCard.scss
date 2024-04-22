@@ -1,0 +1,46 @@
+.aboutMemberCardWrapper{
+    width: 250px;
+    background-color: var(--kssiaBackground);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    @media(max-width:1180px){
+        width: 170px;
+    }
+    .aboutMemberCardContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .aboutMemberCardTop{
+            img{
+                object-fit: contain;
+                width: 100%;
+                height: 200px;
+                @media(max-width:1180px){
+                    height: 120px;
+                }
+            }
+        }
+        .aboutMemberCardBottom{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            p{
+                word-break: break-word; 
+                font-weight: 500;
+                font-size: 16px;
+                color: var(--kssiaBlue);
+                text-align: center;
+                @media(max-width:1180px){
+                    font-size: 12px;
+                }
+            }
+            .aboutMemberCardDesignation{
+                color: var(--kssiaRed);
+            }
+        }
+    }
+}
