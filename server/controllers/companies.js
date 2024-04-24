@@ -85,9 +85,15 @@ export const addCompany = ({
   return new Promise(async (resolve, reject) => {
     try {
       let nkeyword = company_name.split(" ")[0];
-
+      const web_array = company_website.split("//");
+      let website = "";
+      if(web_array.length === 2){
+        website = web_array[1];
+      }else{
+        website = web_array[0]
+      }
       const result = await db.query(
-        `INSERT INTO companies (company_name, company_image,company_about, address, company_url,district) VALUES ("${company_name}","${company_image}","${company_about}","${company_address}","${company_website}","${district}")`
+        `INSERT INTO companies (company_name, company_image,company_about, address, company_url,district) VALUES ("${company_name}","${company_image}","${company_about}","${company_address}","${website}","${district}")`
       );
 
       let insertedCompany = {
