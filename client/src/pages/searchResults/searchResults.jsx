@@ -16,6 +16,7 @@ const Searchresults = () => {
   const [suggestedProductsResult, setSuggestedProductsResult] = useState([]);
   const [districts, setDistricts] = useState();
   const [selectDistrict, setSelectDistrict] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const switchTabClick = (switchedTab) => {
     setSwitchTab(switchedTab);
@@ -28,11 +29,19 @@ const Searchresults = () => {
   }, []);
 
   useEffect(() => {
-    getSearchResults(searchTerm, selectDistrict).then((results) => {
-      setCompaniesResult(results[0]);
-      setSuggestedProductsResult(results[1]);
-      setProductsResult(results[2]);
-    });
+    setIsLoading(true);
+    getSearchResults(searchTerm, selectDistrict)
+      .then((results) => {
+        setCompaniesResult(results[0]);
+        setSuggestedProductsResult(results[1]);
+        setProductsResult(results[2]);
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [searchTerm, selectDistrict]);
 
   useEffect(() => {
@@ -83,12 +92,12 @@ const Searchresults = () => {
               </li>
             </ul>
           </div>
-          {companiesResult && (
+          {!isLoading && companiesResult ? (
             <div className="searchResultsContent">
               {switchTab === "companies" &&
                 (companiesResult.length != 0 ? (
-                  <div className="searchResultCompany">
-                    <div className="searchResultCompanyDistrictList">
+                  <div className="searchResultsCompany">
+                    <div className="searchResultsCompanyDistrictList">
                       <p>Filter by single district: </p>
                       <select
                         name="district"
@@ -111,8 +120,8 @@ const Searchresults = () => {
                     <SearchCompanies data={companiesResult} />
                   </div>
                 ) : (
-                  <div className="searchResultCompany">
-                    <div className="searchResultCompanyDistrictList">
+                  <div className="searchResultsCompany">
+                    <div className="searchResultsCompanyDistrictList">
                       <p>Filter by single district: </p>
                       <select
                         name="district"
@@ -133,17 +142,32 @@ const Searchresults = () => {
                       </select>
                     </div>
 
-                    <p className="searchResultsContentError">
-                      No companies for "{searchTerm}"
-                    </p>
+                    {selectDistrict ? (
+                      <p className="searchResultsContentError">
+                        No companies for "{searchTerm}" in {selectDistrict}
+                      </p>
+                    ) : (
+                      <p className="searchResultsContentError">
+                        No companies for "{searchTerm}"
+                      </p>
+                    )}
                   </div>
                 ))}
               {switchTab === "products" && (
-                <SearchProducts data={productsResult} search = {searchTerm}/>
+                <SearchProducts data={productsResult} search={searchTerm} />
               )}
               {switchTab === "suggested products" && (
-                <SearchProducts data={suggestedProductsResult} search = {searchTerm}/>
+                <SearchProducts
+                  data={suggestedProductsResult}
+                  search={searchTerm}
+                />
               )}
+            </div>
+          ) : (
+            <div className="searchResultsContent">
+            <p className="searchResultsContentLoading">
+              Loading ...
+            </p>
             </div>
           )}
         </div>
